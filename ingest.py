@@ -5,13 +5,16 @@ import requests
 import csv
 import os
 from datetime import datetime
+from dotenv import load_dotenv
 
 # =========================
 # CONFIG
 # =========================
-TOKEN = ""
-WEBHOOK_URL = ""
-CHANNEL_ID = 1404944938352771153  # replace with your channel ID
+load_dotenv()
+
+TOKEN = os.environ["TOKEN"]
+WEBHOOK_URL = os.environ["WEBHOOK_URL"]
+CHANNEL_ID = int(os.environ["CHANNEL_ID"])
 
 COMMAND_PREFIX = "!log"
 CSV_FILE = "logs.csv"
